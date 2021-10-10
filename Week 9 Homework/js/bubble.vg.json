@@ -3,7 +3,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/suburb_overall.csv"
     },
-    "width": 300,
+    "width": 275,
     "height": 200,
     "params": [
       {"name":"property_type",  
@@ -24,10 +24,14 @@
       "strokeWidth": 1
     },
     "encoding": {
+      "color": {"field": "prop_type", "type": "nominal","title":"Property Type","scale":
+        {"domain":["House","Unit"],"range":["#17A69F","#E61919"]}},
+      
       "x": {
         "field": "price",
         "type": "quantitative",
         "axis": {"grid": false},
+        
         "scale": {"domainMax":3000000,"domainMin":200000,"type": "log","base":10}
       },
       "y": {"field": "rental_yield", "type": "quantitative", "axis": {"labelExpr": "datum.label + '%'"},
@@ -37,14 +41,16 @@
         "field": "Count",
         "type": "quantitative",
         "title": "Count of investment properties",
-        "legend": {"clipHeight": 30},
+        "legend": null,
         "scale": {"rangeMax": 500}
       },
-      "color": {"field": "prop_type", "type": "nominal","title":"Property Type"},
+   
       "tooltip":[
-          {"field":"suburb","type":"nominal","title":"Suburb"},
+          {"field":"suburb","type":"nominal","title":"suburb"},
+          {"field":"prop_type","type":"nominal","title":"property type"},
           {"field":"ry","type":"quantitative","title":"% rental yield","format": ".1f"},
-          {"field":"price","type":"quantitative","title":"median price"}
+          {"field":"price","type":"quantitative","title":"median price"},
+          {"field":"Count","type":"quantitative","title":"count of investment properties"}
       ]
     }
   }

@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Stock prices of 5 Tech Companies over Time.",
     "title":"Rental Yield since 2009",
-    "width": 200,"height": 150,
+    "width": 200,"height": 170,
     "params": [
         {"name":"property_type",  
         "bind":
@@ -31,7 +31,7 @@
 
 
     ],
-    "mark": {"type": "line","point": true},
+    "mark": {"type": "line"},
     "encoding": {
       "x": {"field": "year", "type": "temporal"},
       "y": {"field": "rental yield", "type": "quantitative","scale":{"domain":[2,5]},
@@ -64,7 +64,7 @@
             {"calculate":"100 * datum.yield","as":"rental yield"}
     
         ],
-        "mark":{"type": "line","point": true},
+        "mark":{"type": "line"},
         "encoding": {
           "x": {"field": "year", "type": "temporal"},
           "y": {"field": "rental yield", "type": "quantitative","scale":{"domain":[2,5]},
@@ -166,7 +166,112 @@
                  }
             }
 
-        }
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+          "data": {"url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/py_main.csv"},
+          "transform":[
+              {"calculate":"100 * datum.idx-100","as":"price growth since 2009"},
+              {"calculate":"100 * datum.idx-100","as":"pg"},
+              {"calculate":"if(datum.ptype=='U','Unit','House')", "as":"prop_type"},
+              {"filter":" datum.LGA=='Inner Melbourne'||datum.LGA=='Metropolitan Melbourne'||datum.LGA=='Outer Metropolitan'"},
+              {"filter":"property_type==null||datum.ptype==property_type"},
+              {"calculate":"100 * datum.yield","as":"rental yield"},
+              {"filter":"Area==null"}
+              
+      
+      
+          ],
+          "mark": {"type":"point"},
+          "encoding": {
+            "x": {"field": "year", "type": "temporal"},
+            "y": {"field": "rental yield", "type": "quantitative","scale":{"domain":[2,5]},
+            "axis": {"labelExpr": "datum.label + '%'"}},
+            "size":{"value":5},
+      
+            "color": {"field": "area", "type": "nominal","scale":{
+              "domain":["Inner Melbourne Units","Metropolitan Melbourne Units","Outer Metropolitan Units",
+                "Inner Melbourne Houses","Metropolitan Melbourne Houses","Outer Metropolitan Houses","H","U"],
+            "range":["#E2711D","#E61919","#B91793","#21E783","#17A69F","#1566C4","#17A69F","#E61919"]},"legend":null
+          },
+            "tooltip":[
+              {"field":"LGA","type":"nominal","title":"area"},
+              {"field":"prop_type","type":"nominal","title":"property type"},
+              {"field":"median_rent","type":"quantitative","title":"median rent"},
+              {"field":"rental yield","type":"quantitative","title":"rental yield","format": ".1f"},
+              {"field":"year","type":"temporal","title":"year","timeUnit":"year"}
+            ]
+      
+          }
+          },
+          {
+              "data": {"url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/py_main.csv"},
+              "transform":[
+                  {"filter":"datum.LGA!='Inner Melbourne'&&datum.LGA!='Metropolitan Melbourne'&&datum.LGA!='Outer Metropolitan'"},
+                  {"filter":"property_type==null||datum.ptype==property_type"},
+                  {"calculate":"100 * datum.idx-100","as":"pg"},
+                  {"calculate":"if(datum.ptype=='U','Unit','House')", "as":"prop_type"},
+                  {"calculate":"100 * datum.idx-100","as":"price growth since 2009"},
+                  {"filter":"Area==datum.LGA"},
+                  {"calculate":"100 * datum.yield","as":"rental yield"}
+          
+              ],
+              "mark":{"type": "point"},
+              "encoding": {
+                "x": {"field": "year", "type": "temporal"},
+                "y": {"field": "rental yield", "type": "quantitative","scale":{"domain":[2,5]},
+                "axis": {"labelExpr": "datum.label + '%'"}},
+                "size":{"value":5},
+                
+          
+                "color": {"field": "ptype", "type": "nominal","scale":{
+                  "domain":["Inner Melbourne Units","Metropolitan Melbourne Units","Outer Metropolitan Units",
+                    "Inner Melbourne Houses","Metropolitan Melbourne Houses","Outer Metropolitan Houses","H","U"],
+                "range":["#E2711D","#E61919","#B91793","#21E783","#17A69F","#1566C4","#17A69F","#E61919"]},"legend":null
+              },
+                  
+            "tooltip":[
+              {"field":"LGA","type":"nominal","title":"area"},
+              {"field":"prop_type","type":"nominal","title":"property type"},
+              {"field":"median_rent","type":"quantitative","title":"median rent"},
+              {"field":"rental yield","type":"quantitative","title":"rental yield","format": ".1f"},
+              {"field":"year","type":"temporal","title":"year","timeUnit":"year"}
+      
+            ]
+              
+                 
+                  
+      
+              }
+              }
     ]
   }
 

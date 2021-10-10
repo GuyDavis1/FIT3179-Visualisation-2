@@ -24,7 +24,8 @@
       "axis": {"labelExpr": "datum.label + '%'"}
     },
       "y": {"field": "Count","type": "quantitative","stack":null},
-      "color":{"field":"prop_type","title":"Property Type"},
+      "color":{"field":"prop_type","title":"Property Type","scale":
+      {"domain":["House","Unit"],"range":["#17A69F","#E61919"]}},
       "opacity": {"value": 0.5}
       
     }}]

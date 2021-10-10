@@ -10,7 +10,7 @@
       "bind": {
       "input": "range",
       "min": 12000,
-      "max": 25000,
+      "max": 30000,
       "step": 100,
       "name": "Zoom: "
       }},
@@ -131,14 +131,14 @@
 "projection": {
   "type": "conicEqualArea",
 
-  "parallels":[144,-38],
-  "center": [145,-38],
+  "parallels":[144,-37.9],
+  "center": [145,-37.9],
   
     "scale":{"expr":"zoom_level"}
 },
 
 "mark": {
-  "type": "geoshape"},
+  "type": "geoshape","stroke": "#000000"},
 
   
 "encoding": {

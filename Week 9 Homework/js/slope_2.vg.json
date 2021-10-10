@@ -9,6 +9,7 @@
     "height": 200,
     "transform": [
         {"calculate":"datum.region+' '+if(datum.ptype=='U','Unit','House')+'s'","as":"rp"},
+        {"calculate":"if(datum.variable=='cagr','price growth','rental yield')","as":"type"},
         {"filter":"datum.variable!= 'total'"},
         {"calculate":"datum.value*100","as":"pct"}
       
@@ -18,7 +19,7 @@
             "mark": {"type": "rule", "color": "#000000"},
             "encoding": {
               "detail": {"aggregate": "count"},
-              "x": {"field": "variable"}
+              "x": {"field": "type"}
             }},
         
         
@@ -26,15 +27,19 @@
         {
       "mark": "line",
       "encoding": {
-        "color": {"type": "nominal", "field": "rp","title":"Type of Property"},
+
+        "color": {"type": "nominal", "field": "rp","title":"Type of Property","scale":{
+          "domain":["Inner Melbourne Units","Metropolitan Melbourne Units","Outer Metropolitan Units",
+            "Inner Melbourne Houses","Metropolitan Melbourne Houses","Outer Metropolitan Houses"],
+        "range":["#E2711D","#E61919","#B91793","#21E783","#17A69F","#1566C4"]}
+      },
         "detail": {"type": "nominal", "field": "index"},
         
-        "x": {"type": "nominal", "field": "variable"},
+        "x": {"type": "nominal", "field": "type"},
         "y": {"type": "quantitative", "field": "pct", "axis": null,"scale":{"domain":[0,6]}},
         "tooltip":[
             {"field":"region","type":"nominal","title":"area"},
-            {"field":"pct","type":"quantitative","title":"% price growth","format": ".1f"},
-            {"field":"pct","type":"quantitative","title":"%rental yield","format": ".1f"}
+            {"field":"pct","type":"quantitative","title":"% price growth","format": ".1f"}
 
 
         ]
@@ -43,7 +48,7 @@
       
     }, {
       "encoding": {
-        "x": {"type": "nominal", "field": "variable"},
+        "x": {"type": "nominal", "field": "type"},
         "y": {"value": 200}
       },
       "layer": [{
@@ -56,7 +61,7 @@
       }]
     }, {
       "encoding": {
-        "x": {"type": "nominal", "field": "variable"},
+        "x": {"type": "nominal", "field": "type"},
         "y": {"value": 100}
       },
       "layer": [{
@@ -69,7 +74,7 @@
       }]
     }, {
       "encoding": {
-        "x": {"type": "nominal", "field": "variable"},
+        "x": {"type": "nominal", "field": "type"},
         "y": {"value": 0}
       },
       "layer": [{

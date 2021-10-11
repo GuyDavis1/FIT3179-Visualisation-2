@@ -16,6 +16,7 @@
     "encoding": {
       "x": {"field": "count","type":"quantitative"},
       "y": {"field": "ptype","type":"nominal","title":"property type"},
-      "color": {"field": "own_type","title":"Ownership Type"}
+      "color": {"field": "own_type","title":"Ownership Type","scale":
+      {"domain":["Investor ","Resident "],"range":["#771CA2","#2DE171"]}}
     }
   }

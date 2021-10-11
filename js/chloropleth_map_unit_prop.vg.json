@@ -101,8 +101,8 @@
     },
     "tooltip": [
       {"field": "properties.LOC_NAME", "type": "nominal", "title": "suburb"},
-      {"field": "median_price", "type": "quantitative"},
-      {"field": "prop_type", "type": "nominal"}
+      {"field": "median_price", "type": "quantitative","title":"median price"},
+      {"field": "prop_type", "type": "nominal","title":"property type"}
     ]
   }
 },
@@ -152,8 +152,8 @@
   },
   "tooltip": [
     {"field": "properties.LOC_NAME", "type": "nominal", "title": "suburb"},
-    {"field": "median_price", "type": "quantitative"},
-    {"field": "prop_type", "type": "nominal"}
+    {"field": "median_price", "type": "quantitative","title":"median price"},
+    {"field": "prop_type", "type": "nominal","title":"property type"}
   ]
 }
 }

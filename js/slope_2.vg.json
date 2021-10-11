@@ -36,13 +36,7 @@
         "detail": {"type": "nominal", "field": "index"},
         
         "x": {"type": "nominal", "field": "type"},
-        "y": {"type": "quantitative", "field": "pct", "axis": null,"scale":{"domain":[0,6]}},
-        "tooltip":[
-            {"field":"region","type":"nominal","title":"area"},
-            {"field":"pct","type":"quantitative","title":"% price growth","format": ".1f"}
-
-
-        ]
+        "y": {"type": "quantitative", "field": "pct", "axis": null,"scale":{"domain":[0,6]}}
       
       }
       

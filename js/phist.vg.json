@@ -1,6 +1,6 @@
 {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     
-    "width": 300,
+    "width": 275,
     "height": 200,
     "layer" :[{"data": {
         "url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/ovag.csv"

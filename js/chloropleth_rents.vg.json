@@ -1,17 +1,17 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "2021 Median Melburne Rent Map by Suburb",
-    "width": 250,
-    "height": 175,
+    "width": 400,
+    "height": 275,
     "config": {"background":null},
         "params": [
           {
             "name": "zoom_level",
-            "value": 15000,
+            "value": 20000,
             "bind": {
             "input": "range",
-            "min": 12000,
-            "max": 30000,
+            "min": 20000,
+            "max": 40000,
             "step": 100,
             "name": "Zoom: "
             }},

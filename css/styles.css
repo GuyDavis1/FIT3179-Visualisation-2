@@ -11,16 +11,23 @@
 h1 {
 	font-size: 3em; /* 30px/16=1.875em */
   text-align: center;
-  font-family: "roboto"
+  font-family: "Roboto"
 
   }
   h2 {
 	font-size: 2em; /* 30px/16=1.875em */
   text-align: center;
   background-color: rgb(235, 155, 255);
+  padding:5px;
+  font-family: "Roboto";
   }
   h3 {
 	font-size: 1em; /* 30px/16=1.875em */
+ 
+  }
+
+  p{
+    font-family: "Roboto"
   }
 
 .vis-container {

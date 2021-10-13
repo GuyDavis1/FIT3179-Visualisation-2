@@ -14,10 +14,11 @@
     }],
     "transform": [
         {"calculate": "100  * datum.yield","as":"rental_yield"},
-        {"calculate": "toString(100  * datum.yield)","as":"ry"},
+        {"calculate": "toString(round(1000  * datum.yield)/10)+'%'","as":"ry"},
         {"filter":"property_type==null||datum.ptype==property_type"},
         {"filter":"datum.price<2200000"},
-        {"calculate": "if(datum.ptype=='U','Unit','House')", "as":"prop_type"}
+        {"calculate": "if(datum.ptype=='U','Unit','House')", "as":"prop_type"},
+        {"calculate": "round(datum.Count)", "as":"cc"}
     ],
     "mark": {
       "type": "circle",
@@ -48,11 +49,11 @@
       },
    
       "tooltip":[
-          {"field":"suburb","type":"nominal","title":"suburb"},
-          {"field":"prop_type","type":"nominal","title":"property type"},
-          {"field":"ry","type":"quantitative","title":"% rental yield","format": ".1f"},
-          {"field":"price","type":"quantitative","title":"median price"},
-          {"field":"Count","type":"quantitative","title":"count of investment properties"}
+          {"field":"suburb","type":"nominal","title":"Suburb"},
+          {"field":"prop_type","type":"nominal","title":"Property Type"},
+          {"field":"ry","type":"nominal","title":"Rental Yield"},
+          {"field":"price","type":"quantitative","title":"Median Price"},
+          {"field":"cc","type":"quantitative","title":"Count of Investment Properties"}
       ]
     }
   }

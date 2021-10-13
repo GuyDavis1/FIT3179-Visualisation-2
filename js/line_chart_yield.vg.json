@@ -206,7 +206,8 @@
               {"filter":" datum.LGA=='Inner Melbourne'||datum.LGA=='Metropolitan Melbourne'||datum.LGA=='Outer Metropolitan'"},
               {"filter":"property_type==null||datum.ptype==property_type"},
               {"calculate":"100 * datum.yield","as":"rental yield"},
-              {"filter":"Area==null"}
+              {"filter":"Area==null"},
+              {"calculate":"toString(round(10000 * datum.yield)/100)+'%'","as":"ry"}
               
       
       
@@ -216,7 +217,7 @@
             "x": {"field": "year", "type": "temporal"},
             "y": {"field": "rental yield", "type": "quantitative","scale":{"domain":[2,5]},
             "axis": {"labelExpr": "datum.label + '%'"}},
-            "size":{"value":5},
+            "size":{"value":15},
       
             "color": {"field": "area", "type": "nominal","scale":{
               "domain":["Inner Melbourne Units","Metropolitan Melbourne Units","Outer Metropolitan Units",
@@ -224,11 +225,11 @@
             "range":["#E2711D","#E61919","#B91793","#21E783","#17A69F","#1566C4","#17A69F","#E61919"]},"legend":null
           },
             "tooltip":[
-              {"field":"LGA","type":"nominal","title":"area"},
-              {"field":"prop_type","type":"nominal","title":"property type"},
-              {"field":"median_rent","type":"quantitative","title":"median rent"},
-              {"field":"rental yield","type":"quantitative","title":"rental yield","format": ".1f"},
-              {"field":"year","type":"temporal","title":"year","timeUnit":"year"}
+              {"field":"LGA","type":"nominal","title":"Area"},
+              {"field":"prop_type","type":"nominal","title":"Property Type"},
+              {"field":"median_rent","type":"quantitative","title":"Median Rent"},
+              {"field":"ry","type":"nominal","title":"Rental Yield"},
+              {"field":"year","type":"temporal","title":"Year","timeUnit":"year"}
             ]
       
           }
@@ -242,15 +243,16 @@
                   {"calculate":"if(datum.ptype=='U','Unit','House')", "as":"prop_type"},
                   {"calculate":"100 * datum.idx-100","as":"price growth since 2009"},
                   {"filter":"Area==datum.LGA"},
-                  {"calculate":"100 * datum.yield","as":"rental yield"}
+                  {"calculate":"100 * datum.yield","as":"rental yield"},
+                  {"calculate":"toString(round(10000 * datum.yield)/100)+'%'","as":"ry"}
           
               ],
-              "mark":{"type": "point"},
+              "mark":{"type": "point", "filled": true},
               "encoding": {
                 "x": {"field": "year", "type": "temporal"},
                 "y": {"field": "rental yield", "type": "quantitative","scale":{"domain":[2,5]},
                 "axis": {"labelExpr": "datum.label + '%'"}},
-                "size":{"value":5},
+                "size":{"value":15},
                 
           
                 "color": {"field": "ptype", "type": "nominal","scale":{
@@ -260,11 +262,11 @@
               },
                   
             "tooltip":[
-              {"field":"LGA","type":"nominal","title":"area"},
-              {"field":"prop_type","type":"nominal","title":"property type"},
-              {"field":"median_rent","type":"quantitative","title":"median rent"},
-              {"field":"rental yield","type":"quantitative","title":"rental yield","format": ".1f"},
-              {"field":"year","type":"temporal","title":"year","timeUnit":"year"}
+              {"field":"LGA","type":"nominal","title":"Area"},
+              {"field":"prop_type","type":"nominal","title":"Property Type"},
+              {"field":"median_rent","type":"quantitative","title":"Median Rent"},
+              {"field":"ry","type":"nominal","title":"Rental Yield"},
+              {"field":"year","type":"temporal","title":"Year","timeUnit":"year"}
       
             ]
               

@@ -211,7 +211,7 @@
       
       
           ],
-          "mark": {"type":"point"},
+          "mark": {"type": "point", "filled": true},
           "encoding": {
             "x": {"field": "year", "type": "temporal"},
             "y": {"field": "rental yield", "type": "quantitative","scale":{"domain":[2,5]},

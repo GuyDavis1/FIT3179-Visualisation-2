@@ -6,7 +6,7 @@
     },
     
     "config": {
-      "background":null,
+      "background":"#eb9bff",
         "axisY": {
           "titleX": -2,
           "titleY": 410,

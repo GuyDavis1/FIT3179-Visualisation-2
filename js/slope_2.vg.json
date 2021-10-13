@@ -5,14 +5,14 @@
       "url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/tt.csv"
     },
     "title":"Price Growth vs Rental Yield by property type",
-    "config": {"background":null},
+    
     "width": 200,
     "height": 200,
     "transform": [
         {"calculate":"datum.region+' '+if(datum.ptype=='U','Unit','House')+'s'","as":"rp"},
         {"calculate":"if(datum.variable=='cagr','price growth','rental yield')","as":"type"},
         {"filter":"datum.variable!= 'total'"},
-        {"calculate":"datum.value*100","as":"pct"}
+        {"calculate":"round(datum.value*10000)/100","as":"pct"}
       
     ],
     "layer": [ 
@@ -38,10 +38,31 @@
         
         "x": {"type": "nominal", "field": "type"},
         "y": {"type": "quantitative", "field": "pct", "axis": null,"scale":{"domain":[0,6]}}
-      
+        
       }
       
-    }, {
+    }, 
+    {
+      "mark": {"type": "point", "filled": true},
+      "encoding": {
+
+        "color": {"type": "nominal", "field": "rp","title":"Type of Property","scale":{
+          "domain":["Inner Melbourne Units","Metropolitan Melbourne Units","Outer Metropolitan Units",
+            "Inner Melbourne Houses","Metropolitan Melbourne Houses","Outer Metropolitan Houses"],
+        "range":["#E2711D","#E61919","#B91793","#21E783","#17A69F","#1566C4"]}
+      },
+        "detail": {"type": "nominal", "field": "index"},
+        
+        "x": {"type": "nominal", "field": "type"},
+        "y": {"type": "quantitative", "field": "pct", "axis": null,"scale":{"domain":[0,6]}}
+        
+      }
+      
+    },
+    
+    
+    
+    {
       "encoding": {
         "x": {"type": "nominal", "field": "type"},
         "y": {"value": 200}
@@ -84,6 +105,7 @@
     "config": {
       "axisX": {"domain": false, "labelAngle": 0, "tickColor": "#000000", "title": null},
       "view": {"stroke": null},
+      "background":null,
       "style": {
         "label": {"baseline": "middle", "align": "right", "dx": -5},
         "tick": {"orient": "horizontal"}

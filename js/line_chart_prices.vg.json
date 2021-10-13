@@ -181,7 +181,7 @@
       
       
           ],
-          "mark": {"type": "point"},
+          "mark": {"type": "point", "filled": true},
           "encoding": {
             "x": {"field": "year", "type": "temporal"},
             "y": {"field": "price growth since 2009", "type": "quantitative","scale":{"domain":[0,120]},

@@ -33,10 +33,10 @@
         "type": "quantitative",
         "axis": {"grid": false},
         
-        "scale": {"domainMax":3000000,"domainMin":200000,"type": "log","base":10}
+        "scale": {"domainMax":2500000,"domainMin":100000}
       },
       "y": {"field": "rental_yield", "type": "quantitative", "axis": {"labelExpr": "datum.label + '%'"},
-      "scale":{"domainMax":7,"domainMin":1},
+      "scale":{"domainMax":7,"domainMin":0},
         "title":"rental yield"},
       "size": {
         "field": "Count",

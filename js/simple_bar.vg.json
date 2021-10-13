@@ -15,9 +15,16 @@
     },
     "mark": "bar",
     "encoding": {
-      "x": {"field": "count","type":"quantitative"},
-      "y": {"field": "ptype","type":"nominal","title":"property type"},
+      "x": {"field": "count","type":"quantitative","title":"Count"},
+      "y": {"field": "ptype","type":"nominal","title":"Property Type"},
       "color": {"field": "own_type","title":"Ownership Type","scale":
-      {"domain":["Investor ","Resident "],"range":["#771CA2","#2DE171"]}}
+      {"domain":["Investor ","Resident "],"range":["#771CA2","#2DE171"]}},
+      "tooltip":[
+        {"field":"ptype","type":"nominal","title":"Property TypE"},
+        {"field":"own_type","type":"nominal","title":"Ownership Type"},
+        {"field":"count","type":"nominal","title":"Count of Properties"}
+        
+    ]
     }
+    
   }

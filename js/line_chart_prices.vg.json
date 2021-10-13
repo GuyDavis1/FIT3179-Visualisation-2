@@ -186,7 +186,7 @@
             "x": {"field": "year", "type": "temporal"},
             "y": {"field": "price growth since 2009", "type": "quantitative","scale":{"domain":[0,120]},
             "axis": {"labelExpr": "datum.label + '%'"}},
-            "size":{"value":5},
+            "size":{"value":15},
       
             "color": {"field": "area", "type": "nominal","scale":{
                 "domain":["Inner Melbourne Units","Metropolitan Melbourne Units","Outer Metropolitan Units",
@@ -219,7 +219,7 @@
                 "x": {"field": "year", "type": "temporal"},
                 "y": {"field": "price growth since 2009", "type": "quantitative","scale":{"domain":[0,120]},
                 "axis": {"labelExpr": "datum.label + '%'"}},
-                "size":{"value":5},
+                "size":{"value":15},
                 
           
                 "color": {"field": "ptype", "type": "nominal","scale":{

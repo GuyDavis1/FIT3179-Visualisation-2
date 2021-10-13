@@ -69,6 +69,7 @@
         }
       },
       {"calculate": "datum.median_rent", "as": "median rent"},
+      {"calculate": "'Hou'+'se'", "as": "ptt"},
       {"calculate":"if(property_type==null,'House','something broke')", "as":"ptype"},
       
       {"filter":"property_type==null"}
@@ -98,7 +99,7 @@
       "tooltip": [
         {"field": "properties.LOC_NAME", "type": "nominal", "title": "suburb"},
         {"field": "median_rent", "type": "quantitative","title":"median price"},
-        {"field": "ptype", "type": "nominal","title":"property type"}
+        {"field": "ptt", "type": "nominal","title":"property type"}
       ]
     }
   },
@@ -121,6 +122,7 @@
       }
     },
     {"calculate": "datum.median_rent", "as": "median rent"},
+    {"calculate": "'Uni'+'t'", "as": "ptt"},
     {"calculate":"if(property_type=='unit','House','something broke')", "as":"ptype"},
       
     {"filter":"property_type=='unit'"}
@@ -150,7 +152,7 @@
     "tooltip": [
       {"field": "properties.LOC_NAME", "type": "nominal", "title": "suburb"},
       {"field": "median_rent", "type": "quantitative","title":"median price"},
-      {"field": "ptype", "type": "nominal","title":"property type"}
+      {"field": "ptt", "type": "nominal","title":"property type"}
     ]
   }
   }

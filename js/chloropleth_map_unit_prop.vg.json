@@ -51,7 +51,7 @@
       
    
     },
-    "mark": {"type": "geoshape","fill": "#EEEEEE","stroke": "#EEEEEE"}
+    "mark": {"type": "geoshape","fill": "#CCCCCC","stroke": "#CCCCCC"}
 
 
   },
@@ -75,6 +75,7 @@
     },
     {"calculate": "datum.median_price", "as": "median price"},
     {"calculate": "datum.p_type", "as": "prop_type"},
+    {"calculate": "'Hou'+'se'", "as": "ptt"},
     {"filter":"datum.p_type=='house'&& property_type==null"}
   ],
   "projection": {
@@ -103,7 +104,7 @@
     "tooltip": [
       {"field": "properties.LOC_NAME", "type": "nominal", "title": "suburb"},
       {"field": "median_price", "type": "quantitative","title":"median price"},
-      {"field": "prop_type", "type": "nominal","title":"property type"}
+      {"field": "ptt", "type": "nominal","title":"property type"}
     ]
   }
 },
@@ -127,6 +128,7 @@
   },
   {"calculate": "datum.median_price", "as": "median price"},
   {"calculate": "datum.p_type", "as": "prop_type"},
+  {"calculate": "'Uni'+'t'", "as": "ptt"},
   {"filter":"datum.p_type=='unit'&& property_type=='unit'"}
 ],
 "projection": {
@@ -154,7 +156,7 @@
   "tooltip": [
     {"field": "properties.LOC_NAME", "type": "nominal", "title": "suburb"},
     {"field": "median_price", "type": "quantitative","title":"median price"},
-    {"field": "prop_type", "type": "nominal","title":"property type"}
+    {"field": "ptt", "type": "nominal","title":"property type"}
   ]
 }
 }

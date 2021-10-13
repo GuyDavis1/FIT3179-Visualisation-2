@@ -7,10 +7,10 @@
 
 
         "values": [
-            {"ptype": "Houses","own_type":"Investor ", "count": 262412},
-            {"ptype": "Units","own_type":"Investor ", "count": 133689},
-            {"ptype": "Houses","own_type":"Resident ", "count": 1069628},
-            {"ptype": "Units","own_type":"Resident ", "count": 97607}
+            {"ptype": "House","own_type":"Investor ", "count": 262412},
+            {"ptype": "Unit","own_type":"Investor ", "count": 133689},
+            {"ptype": "House","own_type":"Resident ", "count": 1069628},
+            {"ptype": "Unit","own_type":"Resident ", "count": 97607}
           ]
     },
     "mark": "bar",
@@ -20,7 +20,7 @@
       "color": {"field": "own_type","title":"Ownership Type","scale":
       {"domain":["Investor ","Resident "],"range":["#771CA2","#2DE171"]}},
       "tooltip":[
-        {"field":"ptype","type":"nominal","title":"Property TypE"},
+        {"field":"ptype","type":"nominal","title":"Property Type"},
         {"field":"own_type","type":"nominal","title":"Ownership Type"},
         {"field":"count","type":"nominal","title":"Count of Properties"}
         

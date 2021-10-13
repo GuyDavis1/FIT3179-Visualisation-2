@@ -16,6 +16,7 @@
         {"calculate": "100  * datum.yield","as":"rental_yield"},
         {"calculate": "toString(100  * datum.yield)","as":"ry"},
         {"filter":"property_type==null||datum.ptype==property_type"},
+        {"filter":"datum.price<2200000"},
         {"calculate": "if(datum.ptype=='U','Unit','House')", "as":"prop_type"}
     ],
     "mark": {
@@ -33,10 +34,10 @@
         "type": "quantitative",
         "axis": {"grid": false},
         
-        "scale": {"domainMax":2500000,"domainMin":100000}
+        "scale": {"domainMax":2200000,"domainMin":100000}
       },
       "y": {"field": "rental_yield", "type": "quantitative", "axis": {"labelExpr": "datum.label + '%'"},
-      "scale":{"domainMax":7,"domainMin":0},
+      "scale":{"domainMax":8,"domainMin":0},
         "title":"rental yield"},
       "size": {
         "field": "Count",

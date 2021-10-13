@@ -3,6 +3,7 @@
 
     "title":"House Price Growth since 2009",
     "width": 200,"height": 170,
+    "config": {"background":null},
     "params": [
         {"name":"property_type",  
         "bind":

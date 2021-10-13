@@ -3,6 +3,7 @@
     "title": "2021 Median Melburne Rent Map by Suburb",
     "width": 250,
     "height": 175,
+    "config": {"background":null},
         "params": [
           {
             "name": "zoom_level",

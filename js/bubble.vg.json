@@ -5,6 +5,7 @@
     },
     "width": 275,
     "height": 200,
+    "config": {"background":null},
     "params": [
       {"name":"property_type",  
       "bind":

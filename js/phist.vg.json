@@ -2,11 +2,13 @@
     
     "width": 275,
     "height": 200,
+    "config": {"background":null},
     "layer" :[{"data": {
         "url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/ovag.csv"
       },
       "transform": [
             {"calculate":"100*datum['total_income']","as":"total income"},
+            {"calculate":"toString(round(100*datum['total_income']))+'-'+toString(100*datum['total_income']+1)+'% return'","as":"tic"},
             {"filter":"datum['total income']<15"},
             {"filter":"datum['total income']>2"},
             {"calculate": "if(datum.ptype=='U','Unit','House')", "as":"prop_type"}
@@ -20,13 +22,23 @@
         "step": 1,
         "anchor": 3
       },
-      "scale": {"domainMax":14,"domainMin":3},
-      "axis": {"labelExpr": "datum.label + '%'"}
+      "scale": {"domainMax":17,"domainMin":0},
+      "axis": {"labelExpr": "datum.label + '%'"},
+      "title":"yearly revenue as a proportion of property value"
     },
       "y": {"field": "Count","type": "quantitative","stack":null},
       "color":{"field":"prop_type","title":"Property Type","scale":
       {"domain":["House","Unit"],"range":["#17A69F","#E61919"]}},
-      "opacity": {"value": 0.5}
+      "opacity": {"value": 0.5},
       
-    }}]
+    
+    
+  "tooltip": [
+    {"field": "tic", "type": "nominal", "title": "yearly revenue as a proportion of property value"},
+    {"field": "Count", "type": "quantitative","title":"Count of investment properties"},
+    {"field": "prop_type", "type": "nominal","title":"property type"}
+    
+  ]
+}
+  }]
 }

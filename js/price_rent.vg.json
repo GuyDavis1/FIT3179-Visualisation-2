@@ -8,6 +8,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A bubble plot showing the relationship between prices and rents",
     "width": 500,"height": 300,
+    "config": {"background":null},
     "title":"2019 median prices and median rents by suburb",
 
     "params": [

@@ -4,7 +4,9 @@
       "text": "price growth vs rental yield by region",
       "frame": "bounds"
     },
+    
     "config": {
+      "background":null,
         "axisY": {
           "titleX": -2,
           "titleY": 410,

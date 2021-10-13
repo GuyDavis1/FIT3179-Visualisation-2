@@ -44,8 +44,8 @@
       "size": {
         "field": "Count",
         "type": "quantitative",
-        "title": "Count of investment properties",
-        "legend": null,
+        "title": "Investment Property Count",
+        
         "scale": {"rangeMax": 500}
       },
    

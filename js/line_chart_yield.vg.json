@@ -207,6 +207,7 @@
               {"filter":"property_type==null||datum.ptype==property_type"},
               {"calculate":"100 * datum.yield","as":"rental yield"},
               {"filter":"Area==null"},
+              {"calculate": "'$'+toString(datum.median_rent)", "as": "mp"},
               {"calculate":"toString(round(10000 * datum.yield)/100)+'%'","as":"ry"}
               
       
@@ -227,7 +228,7 @@
             "tooltip":[
               {"field":"LGA","type":"nominal","title":"Area"},
               {"field":"prop_type","type":"nominal","title":"Property Type"},
-              {"field":"median_rent","type":"quantitative","title":"Median Rent"},
+              {"field":"mp","type":"nominal","title":"Median Rent"},
               {"field":"ry","type":"nominal","title":"Rental Yield"},
               {"field":"year","type":"temporal","title":"Year","timeUnit":"year"}
             ]
@@ -244,7 +245,9 @@
                   {"calculate":"100 * datum.idx-100","as":"price growth since 2009"},
                   {"filter":"Area==datum.LGA"},
                   {"calculate":"100 * datum.yield","as":"rental yield"},
+                  {"calculate": "'$'+toString(datum.median_rent)", "as": "mp"},
                   {"calculate":"toString(round(10000 * datum.yield)/100)+'%'","as":"ry"}
+                  
           
               ],
               "mark":{"type": "point", "filled": true},
@@ -264,7 +267,7 @@
             "tooltip":[
               {"field":"LGA","type":"nominal","title":"Area"},
               {"field":"prop_type","type":"nominal","title":"Property Type"},
-              {"field":"median_rent","type":"quantitative","title":"Median Rent"},
+              {"field":"mp","type":"nominal","title":"Median Rent"},
               {"field":"ry","type":"nominal","title":"Rental Yield"},
               {"field":"year","type":"temporal","title":"Year","timeUnit":"year"}
       

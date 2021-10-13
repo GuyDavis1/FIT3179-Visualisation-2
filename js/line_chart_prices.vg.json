@@ -83,6 +83,7 @@
                 {"calculate":"100 * datum.idx-100+if(datum.area=='Outer Metropolitan Houses',+2,0)+if(datum.area=='Metropolitan Melbourne Units',-2,0)+if(datum.area=='Inner Melbourne Houses',-4,0)","as":"pg_altered"},
                 {"filter":" datum.LGA=='Inner Melbourne'||datum.LGA=='Metropolitan Melbourne'||datum.LGA=='Outer Metropolitan'"},
                 {"filter":"property_type==null||datum.ptype==property_type"},
+                
                 {"filter":"Area==null"}
             ],
             "mark": {
@@ -177,7 +178,8 @@
               {"calculate":"if(datum.ptype=='U','Unit','House')", "as":"prop_type"},
               {"filter":" datum.LGA=='Inner Melbourne'||datum.LGA=='Metropolitan Melbourne'||datum.LGA=='Outer Metropolitan'"},
               {"filter":"property_type==null||datum.ptype==property_type"},
-              {"filter":"Area==null"}
+              {"filter":"Area==null"},
+              {"calculate": "'$'+toString(datum.price)", "as": "mp"}
       
       
           ],
@@ -194,9 +196,10 @@
               "range":["#E2711D","#E61919","#B91793","#21E783","#17A69F","#1566C4","#17A69F","#E61919"]},"legend":null
             },
             "tooltip":[
+              
               {"field":"LGA","type":"nominal","title":"Area"},
               {"field":"prop_type","type":"nominal","title":"Property Type"},
-              {"field":"price","type":"quantitative","title":"Median Price"},
+              {"field":"mp","type":"nominal","title":"Median Price"},
               {"field":"pg","type":"nominal","title":"Percentage Growth Since 2009"},
               {"field":"year","type":"temporal","title":"Year","timeUnit":"year"}
             ]
@@ -211,7 +214,8 @@
                   {"calculate":"toString(round(100 * datum.idx-100))+'%'","as":"pg"},
                   {"calculate":"if(datum.ptype=='U','Unit','House')", "as":"prop_type"},
                   {"calculate":"100 * datum.idx-100","as":"price growth since 2009"},
-                  {"filter":"Area==datum.LGA"}
+                  {"filter":"Area==datum.LGA"},
+                  {"calculate": "'$'+toString(datum.price)", "as": "mp"}
           
               ],
               "mark":{"type":"point"},
@@ -231,7 +235,7 @@
             "tooltip":[
               {"field":"LGA","type":"nominal","title":"Area"},
               {"field":"prop_type","type":"nominal","title":"Property Type"},
-              {"field":"price","type":"quantitative","title":"Median Price"},
+              {"field":"mp","type":"nominal","title":"Median Price"},
               {"field":"pg","type":"nominal","title":"Percentage Growth Since 2009"},
               {"field":"year","type":"temporal","title":"Year","timeUnit":"year"}
             ]

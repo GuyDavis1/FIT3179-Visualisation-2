@@ -74,6 +74,7 @@
       }
     },
     {"calculate": "datum.median_price", "as": "median price"},
+    {"calculate": "'$'+toString(datum.median_price)", "as": "mp"},
     {"calculate": "datum.p_type", "as": "prop_type"},
     {"calculate": "'Hou'+'se'", "as": "ptt"},
     {"filter":"datum.p_type=='house'&& property_type==null"}
@@ -103,7 +104,7 @@
     },
     "tooltip": [
       {"field": "properties.LOC_NAME", "type": "nominal", "title": "Suburb"},
-      {"field": "median_price", "type": "quantitative","title":"Median Price"},
+      {"field": "mp", "type": "nominal","title":"Median Price"},
       {"field": "ptt", "type": "nominal","title":"Property Type"}
     ]
   }
@@ -128,6 +129,7 @@
   },
   {"calculate": "datum.median_price", "as": "median price"},
   {"calculate": "datum.p_type", "as": "prop_type"},
+  {"calculate": "'$'+toString(datum.median_price)", "as": "mp"},
   {"calculate": "'Uni'+'t'", "as": "ptt"},
   {"filter":"datum.p_type=='unit'&& property_type=='unit'"}
 ],
@@ -155,7 +157,7 @@
   },
   "tooltip": [
     {"field": "properties.LOC_NAME", "type": "nominal", "title": "Suburb"},
-    {"field": "median_price", "type": "quantitative","title":"Median Price"},
+    {"field": "mp", "type": "nominal","title":"Median Price"},
     {"field": "ptt", "type": "nominal","title":"Property Type"}
   ]
 }

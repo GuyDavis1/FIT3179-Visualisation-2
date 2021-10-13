@@ -18,7 +18,8 @@
         {"filter":"property_type==null||datum.ptype==property_type"},
         {"filter":"datum.price<2200000"},
         {"calculate": "if(datum.ptype=='U','Unit','House')", "as":"prop_type"},
-        {"calculate": "round(datum.Count)", "as":"cc"}
+        {"calculate": "round(datum.Count)", "as":"cc"},
+        {"calculate": "'$'+toString(datum.price)", "as": "mp"}
     ],
     "mark": {
       "type": "circle",
@@ -52,7 +53,7 @@
           {"field":"suburb","type":"nominal","title":"Suburb"},
           {"field":"prop_type","type":"nominal","title":"Property Type"},
           {"field":"ry","type":"nominal","title":"Rental Yield"},
-          {"field":"price","type":"quantitative","title":"Median Price"},
+          {"field":"mp","type":"nominal","title":"Median Price"},
           {"field":"cc","type":"quantitative","title":"Count of Investment Properties"}
       ]
     }

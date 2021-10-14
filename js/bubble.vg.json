@@ -3,7 +3,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/suburb_overall.csv"
     },
-    "width": 275,
+    "width": 325,
     "height": 200,
     "config": {"background":null,
     "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
@@ -41,7 +41,7 @@
         "field": "price",
         "type": "quantitative",
         "axis": {"grid": false},
-        
+        "title":"Median Price",
         "scale": {"domainMax":2200000,"domainMin":100000}
       },
       "y": {"field": "rental_yield", "type": "quantitative", "axis": {"labelExpr": "datum.label + '%'"},

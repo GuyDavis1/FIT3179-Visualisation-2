@@ -35,7 +35,7 @@
         "color": {"type": "nominal", "field": "rp","title":"Type of Property","scale":{
           "domain":["Inner Melbourne Units","Metropolitan Melbourne Units","Outer Metropolitan Units",
             "Inner Melbourne Houses","Metropolitan Melbourne Houses","Outer Metropolitan Houses"],
-        "range":["#B91793","#E61919","#E2711D","#1566C4","#17A69F","#21E783"]}
+        "range":["#B91793","#E61919","#E2711D","#1566C4","#17A69F","#2DE171"]}
       },
         "detail": {"type": "nominal", "field": "index"},
         
@@ -52,7 +52,7 @@
         "color": {"type": "nominal", "field": "rp","title":"Type of Property","scale":{
           "domain":["Inner Melbourne Units","Metropolitan Melbourne Units","Outer Metropolitan Units",
             "Inner Melbourne Houses","Metropolitan Melbourne Houses","Outer Metropolitan Houses"],
-        "range":["#E2711D","#E61919","#B91793","#21E783","#17A69F","#1566C4"]}
+        "range":["#E2711D","#E61919","#B91793","#21E783","#17A69F","#2DE171"]}
       },
         "detail": {"type": "nominal", "field": "index"},
         

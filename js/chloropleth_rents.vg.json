@@ -22,7 +22,7 @@
       
       { "input":"select",
       
-      "options":[null,"unit"],"labels":["house","unit"], "name":"Property Type Selection:"}
+      "options":[null,"unit"],"labels":["House","Unit"], "name":"Property Type Selection:"}
     }
     ],
     "layer" : [ {
@@ -46,7 +46,7 @@
         
      
       },
-      "mark": {"type": "geoshape","fill": "#EEEEEE","stroke": "#EEEEEE"}
+      "mark": {"type": "geoshape","fill": "#CCCCCC","stroke": "#CCCCCC"}
   
   
     },
@@ -91,10 +91,10 @@
     "encoding": {
       "color": {
         "field": "median rent",
-        
+        "title":"Median Rent",
         "type": "quantitative",
-        "scale":{"domain":[300,1000],
-        "range":["#0d0887","#9c179e","#ed7953","#f0f921","#f0f921"]
+        "scale":{"domain":[300,400,1000],
+        "range":["#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#88419d","#6e016b"]
         }
       },
       "tooltip": [
@@ -147,8 +147,8 @@
       "field": "median rent",
       
       "type": "quantitative",
-      "scale":{"domain":[300,1000],
-      "range":["#0d0887","#9c179e","#ed7953","#f0f921"]
+      "scale":{"domain":[300,400,1000],
+      "range":["#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#88419d","#6e016b"]
       }
     },
     "tooltip": [

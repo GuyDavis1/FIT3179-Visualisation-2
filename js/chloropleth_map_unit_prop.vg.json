@@ -90,7 +90,7 @@
   },
 
   "mark": {
-    "type": "geoshape","stroke": "#000000"},
+    "type": "geoshape","stroke": "#444444"},
   
     
   "encoding": {
@@ -98,8 +98,8 @@
       "field": "median price",
       
       "type": "quantitative",
-      "scale":{"domain":[200000,2000000],
-      "range":["#0d0887","#9c179e","#ed7953","#f0f921","#f0f921"]
+      "scale":{"domain":[400000,500000,650000,800000,1000000,1500000,2000000],
+      "range":["#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#88419d","#6e016b"]
       }
     },
     "tooltip": [
@@ -149,10 +149,11 @@
 "encoding": {
   "color": {
     "field": "median price",
+    "title":"Median Price",
     
     "type": "quantitative",
-    "scale":{"domain":[200000,2000000],
-    "range":["#0d0887","#9c179e","#ed7953","#f0f921"]
+    "scale":{"domain":[400000,500000,650000,800000,1000000,1500000,2000000],
+    "range":["#edf8fb","#bfd3e6","#9ebcda","#8c96c6","#8c6bb1","#88419d","#88419d","#6e016b"]
     }
   },
   "tooltip": [

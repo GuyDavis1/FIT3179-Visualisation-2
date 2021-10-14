@@ -3,7 +3,14 @@
   "title": "2021 Median Melbourne Price Map by Suburb",
   "width": 400,
   "height": 275,
-  "config": {"background":null},
+  "config": {"background":null,
+  "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+  "legend": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+  "header": {"labelFont": "roboto", "titleFont": "roboto"},
+  "mark": {"font": "roboto"},
+  "title": {"font": "roboto", "subtitleFont": "roboto","fontSize":16}
+
+},
   "params": [
     {
       "name": "zoom_level",
@@ -24,7 +31,7 @@
     
     { "input":"select",
     
-    "options":[null,"unit"],"labels":["house","unit"], "name":"Property Type Selection:"}
+    "options":[null,"unit"],"labels":["House","Unit"], "name":"Property Type Selection:"}
 
    
   }

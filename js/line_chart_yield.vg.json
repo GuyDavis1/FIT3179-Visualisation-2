@@ -2,13 +2,19 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Stock prices of 5 Tech Companies over Time.",
     "title":"Rental Yield since 2009",
-    "width": 325,"height": 270,
-    "config": {"background":null},
+    "width": 315,"height": 270,
+    
+    "config": {"background":null,
+    "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+    "legend": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+    "header": {"labelFont": "roboto", "titleFont": "roboto"},
+    "mark": {"font": "roboto"},
+    "title": {"font": "roboto", "subtitleFont": "roboto","fontSize":16}},
     "params": [
         {"name":"property_type",  
         "bind":
         { "input":"select",
-        "options":[null,"U","H"],"labels":["all","units","houses"], "name":"Property Type Selection:"}
+        "options":[null,"U","H"],"labels":["All","Units","Houses"], "name":"Property Type Selection:"}
       },
       {"name":"Area",  
         "bind":

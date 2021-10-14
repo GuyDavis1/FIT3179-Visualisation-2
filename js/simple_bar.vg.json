@@ -1,8 +1,16 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 135,
+    "width": 155,
     "height": 100,
-    "config": {"background":null},
+    "config": {"background":null,
+    
+      "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+      "legend": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+      "header": {"labelFont": "roboto", "titleFont": "roboto"},
+      "mark": {"font": "roboto"},
+      "title": {"font": "roboto", "subtitleFont": "roboto","fontSize":16}
+    },
+    "title":"Count of Properties by Type and Ownership",
     "data": {
 
 
@@ -17,7 +25,7 @@
     "encoding": {
       "x": {"field": "count","type":"quantitative","title":"Count"},
       "y": {"field": "ptype","type":"nominal","title":"Property Type"},
-      "color": {"field": "own_type","title":"Ownership Type","scale":
+      "color": {"field": "own_type","title":"Ownership","scale":
       {"domain":["Investor ","Resident "],"range":["#771CA2","#2DE171"]}},
       "tooltip":[
         {"field":"ptype","type":"nominal","title":"Property Type"},

@@ -2,7 +2,14 @@
     
     "width": 275,
     "height": 200,
-    "config": {"background":null},
+    "title":"Total Revenue from Houses vs Units",
+    "config": {"background":null,
+    "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+    "legend": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+    "header": {"labelFont": "roboto", "titleFont": "roboto"},
+    "mark": {"font": "roboto"},
+    "title": {"font": "roboto", "subtitleFont": "roboto","fontSize":16}
+  },
     "layer" :[{"data": {
         "url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/ovag.csv"
       },
@@ -24,7 +31,7 @@
       },
       "scale": {"domainMax":17,"domainMin":0},
       "axis": {"labelExpr": "datum.label + '%'"},
-      "title":"Yearly Property Revenue as a Proportion of Property Value"
+      "title":"Total Revenue"
     },
       "y": {"field": "Count","type": "quantitative","stack":null},
       "color":{"field":"prop_type","title":"Property Type","scale":
@@ -34,7 +41,7 @@
     
     
   "tooltip": [
-    {"field": "tic", "type": "nominal", "title": "How Much Income Did the Property Generate?"},
+    {"field": "tic", "type": "nominal", "title": "Total Revenue Range"},
     {"field": "Count", "type": "quantitative","title":"Count of Investment Properties"},
     {"field": "prop_type", "type": "nominal","title":"Property Type"}
     

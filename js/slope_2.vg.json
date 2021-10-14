@@ -6,6 +6,8 @@
     },
     "title":"Price Growth vs Rental Yield by Property Type",
     
+
+
     "width": 200,
     "height": 200,
     "transform": [
@@ -33,7 +35,7 @@
         "color": {"type": "nominal", "field": "rp","title":"Type of Property","scale":{
           "domain":["Inner Melbourne Units","Metropolitan Melbourne Units","Outer Metropolitan Units",
             "Inner Melbourne Houses","Metropolitan Melbourne Houses","Outer Metropolitan Houses"],
-        "range":["#E2711D","#E61919","#B91793","#21E783","#17A69F","#1566C4"]}
+        "range":["#B91793","#E61919","#E2711D","#1566C4","#17A69F","#21E783"]}
       },
         "detail": {"type": "nominal", "field": "index"},
         
@@ -111,6 +113,11 @@
     }],
     "config": {
       "axisX": {"domain": false, "labelAngle": 0, "tickColor": "#000000", "title": null},
+      "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+      "legend": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+      "header": {"labelFont": "roboto", "titleFont": "roboto"},
+      "mark": {"font": "roboto"},
+      "title": {"font": "roboto", "subtitleFont": "roboto","fontSize":16},
       "view": {"stroke": null},
       "background":null,
       "style": {

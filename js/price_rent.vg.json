@@ -19,7 +19,7 @@
       
       { "input":"select",
       
-      "options":[null,"unit","house"],"labels":["all","units","houses"], "name":"Property Type Selection:"}
+      "options":[null,"unit","house"],"labels":["All","Units","Houses"], "name":"Property Type Selection:"}
     }
     ],
 

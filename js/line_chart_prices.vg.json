@@ -250,6 +250,37 @@
                   
       
               }
+              },
+
+              {
+                "data": {
+              
+              
+                  "values": [
+                    {"year": "2011","lon":78, "txt_":"Houses across all"},
+                    {"year": "2011","lon":72, "txt_":"regions of Melbourne"},
+                      {"year": "2011","lon":66, "txt_":"have increased in"},
+                      {"year": "2011","lon":60, "txt_":"price more than units"}
+                    
+                    
+                    ]
+              },
+              "transform":[{"filter":"Area==null"}],
+
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "fontSize": 11.5
+              
+                },
+              "encoding": {
+                 "text": {"field": "txt_", "type": "nominal"},
+              
+                 "x": {"field": "year", "type": "temporal","title":"Year"},
+                 "y": {"field":"lon","type": "quantitative"}
+              }
+              
               }
     ]
   }

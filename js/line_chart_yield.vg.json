@@ -283,6 +283,36 @@
                   
       
               }
+              },
+
+              {
+                "data": {
+               
+              
+                  "values": [
+                    {"year": "2010","lon":2.63, "txt_":"While unit rental yields have"},
+                    {"year": "2010","lon":2.5, "txt_":"kept relatively stable, house rental"},
+                      {"year": "2010","lon":2.37, "txt_":" yields have decreased over time"}
+                   
+                    
+                    
+                    ]
+              },
+              "transform":[{"filter":"Area==null"}],
+              "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "fontSize": 11.5
+              
+                },
+              "encoding": {
+                 "text": {"field": "txt_", "type": "nominal"},
+              
+                 "x": {"field": "year", "type": "temporal","title":"Year"},
+                 "y": {"field":"lon","type": "quantitative"}
+              }
+              
               }
     ]
   }

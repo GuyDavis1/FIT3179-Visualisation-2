@@ -1,23 +1,28 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/suburb_overall.csv"
-    },
-    "width": 325,
-    "height": 200,
+  
+    "width": 315,
+    "height": 270,
     "config": {"background":null,
-    "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
-    "legend": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
-    "header": {"labelFont": "roboto", "titleFont": "roboto"},
-    "mark": {"font": "roboto"},
-    "title": {"font": "roboto", "subtitleFont": "roboto","fontSize":16}
+      "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+      "legend": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
+      "header": {"labelFont": "roboto", "titleFont": "roboto"},
+      "mark": {"font": "roboto"},
+    "title": {"font": "roboto", "subtitleFont": "roboto"}
   },
-    "params": [
-      {"name":"property_type",  
-      "bind":
-      { "input":"select",
-      "options":[null,"U","H"],"labels":["all","units","houses"], "name":"Property Type Selection:"}
-    }],
+
+  "params": [
+    {"name":"property_type",  
+    "bind":
+    { "input":"select",
+    "options":[null,"U","H"],"labels":["all","units","houses"], "name":"Property Type Selection:"}
+  }],
+
+  "layer":[{
+  "data": {
+    "url": "https://raw.githubusercontent.com/GuyDavis1/Week-9-Homework/main/data/suburb_overall.csv"
+  },
+    
     "transform": [
         {"calculate": "100  * datum.yield","as":"rental_yield"},
         {"calculate": "toString(round(1000  * datum.yield)/10)+'%'","as":"ry"},
@@ -52,7 +57,7 @@
         "type": "quantitative",
         "title": "Investment Property Count",
         
-        "scale": {"rangeMax": 500}
+        "scale": {"rangeMax": 300}
       },
    
       "tooltip":[
@@ -63,4 +68,64 @@
           {"field":"cc","type":"quantitative","title":"Count of Investment Properties"}
       ]
     }
+    },
+
+    
+    {
+      "data": {
+    
+    
+        "values": [
+          {"year": 800000,"lon":6.3, "txt_":"Inner Melbourne Units have higher"},
+          {"year": 800000,"lon":5.95, "txt_":"rental yields than similarly priced"},
+          {"year": 800000,"lon":5.6, "txt_":"properties elsewhere, making them"},
+          {"year": 800000,"lon":5.25, "txt_":"attractive to investors"}
+          ]
+    },
+    "transform":[{"filter":"property_type!='H'"}],
+
+    "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "middle",
+      "fontSize": 11.5
+    
+      },
+    "encoding": {
+       "text": {"field": "txt_", "type": "nominal"},
+    
+       "x": {"field": "year", "type": "quantitative"},
+       "y": {"field":"lon","type": "quantitative"}
+    }
+    
+    },
+    {
+      "data": {
+    
+    
+        "values": [
+          {"year": 780000,"lon":5.8},
+          {"year": 550000,"lon":5}
+
+          ]
+    },
+    "transform":[{"filter":"property_type!='H'"}],
+
+    "mark": {
+      "type": "line"
+ 
+    
+      },
+    "encoding": {
+       "color":{"value":"black"},
+    
+       "x": {"field": "year", "type": "quantitative"},
+       "y": {"field":"lon","type": "quantitative"}
+    }
+    
+    }
+  
+  
+  ]
+
   }

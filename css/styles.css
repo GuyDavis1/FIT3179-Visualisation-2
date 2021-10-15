@@ -32,7 +32,8 @@ h1 {
   }
 
 .vis-container {
-    width: 10%;
+    width: 50%;
+    font-size: 12px;
 }
 
 .pure-g {

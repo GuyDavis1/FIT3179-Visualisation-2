@@ -15,7 +15,7 @@
     {"name":"property_type",  
     "bind":
     { "input":"select",
-    "options":[null,"U","H"],"labels":["all","units","houses"], "name":"Property Type Selection:"}
+    "options":[null,"U","H"],"labels":["All","Units","Houses"], "name":"Property Type Selection:"}
   }],
 
   "layer":[{

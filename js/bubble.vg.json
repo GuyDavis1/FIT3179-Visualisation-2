@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  
+  "title":"Rental Yield vs Price",
     "width": 315,
     "height": 270,
     "config": {"background":null,
@@ -88,7 +88,8 @@
       "type": "text",
       "align": "left",
       "baseline": "middle",
-      "fontSize": 11.5
+      "font":"roboto",
+      "fontSize": 12
     
       },
     "encoding": {

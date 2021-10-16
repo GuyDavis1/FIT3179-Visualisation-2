@@ -91,8 +91,7 @@
 
     "parallels":[144,-37.9],
     "center": [145,-37.9],
-    
-      "scale":{"expr":"zoom_level"}
+    "scale":{"expr":"zoom_level"}
 
   },
 

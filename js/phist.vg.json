@@ -1,7 +1,7 @@
 {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     
     "width": 275,
-    "height": 200,
+    "height": 150,
     "title":"Total Revenue from Houses vs Units",
     "config": {"background":null,
     "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},

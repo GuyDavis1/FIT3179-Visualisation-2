@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-    "title":"House Price Growth since 2009",
+    "title":"Property Price Growth since 2009",
     "width": 315,"height": 270,
     "config": {"background":null,
     "axis": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},

@@ -8,7 +8,7 @@
       "legend": {"labelFont": "roboto", "titleFont": "roboto","labelFontSize":12,"titleFontSize":12},
       "header": {"labelFont": "roboto", "titleFont": "roboto"},
       "mark": {"font": "roboto"},
-    "title": {"font": "roboto", "subtitleFont": "roboto"}
+    "title": {"font": "roboto", "subtitleFont": "roboto","fontSize":16}
   },
 
   "params": [
@@ -51,7 +51,7 @@
       },
       "y": {"field": "rental_yield", "type": "quantitative", "axis": {"labelExpr": "datum.label + '%'"},
       "scale":{"domainMax":8,"domainMin":0},
-        "title":"rental yield"},
+        "title":"Rental Yield"},
       "size": {
         "field": "Count",
         "type": "quantitative",

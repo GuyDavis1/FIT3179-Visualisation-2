@@ -54,9 +54,10 @@
   
   
       "values": [
-        {"year": 11.5,"Count":18000, "txt_":"Houses generally"},
-        {"year": 11.5,"Count":15000, "txt_":"have greater total"},
-        {"year": 11.5,"Count":12000, "txt_":"revenue than units"}
+        {"year": 11.5,"Count":21000, "txt_":"On average, total"},
+        {"year": 11.5,"Count":18000, "txt_":"revenue from"},
+        {"year": 11.5,"Count":15000, "txt_":"houses is greater"},
+        {"year": 11.5,"Count":12000, "txt_":"than for units"}
           
         
         

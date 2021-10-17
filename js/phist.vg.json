@@ -47,5 +47,41 @@
     
   ]
 }
-  }]
+  },
+  
+  {
+    "data": {
+  
+  
+      "values": [
+        {"year": 11.5,"Count":18000, "txt_":"Houses generally"},
+        {"year": 11.5,"Count":15000, "txt_":"have greater total"},
+        {"year": 11.5,"Count":12000, "txt_":"revenue than units"}
+          
+        
+        
+        ]
+  },
+ 
+  "mark": {
+    "type": "text",
+    "align": "left",
+    "baseline": "middle",
+    "font":"roboto",
+    "fontSize": 12
+  
+    },
+  "encoding": {
+     "text": {"field": "txt_", "type": "nominal"},
+  
+     "x": {"field": "year", "type": "quantitative"},
+     "y": {"field":"Count","type": "quantitative"}
+  }
+  
+  }
+
+
+
+
+]
 }
